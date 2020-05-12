@@ -3,6 +3,7 @@ package com.xebia.testing_multithreaded_code;
 
 import com.xebia.testing_multithreaded_code.model.Article;
 import com.xebia.testing_multithreaded_code.repository.ArticleRepository;
+import com.xebia.testing_multithreaded_code.service.ArticlePublisher;
 import com.xebia.testing_multithreaded_code.service.EmailSender;
 import org.junit.Ignore;
 import org.junit.Rule;

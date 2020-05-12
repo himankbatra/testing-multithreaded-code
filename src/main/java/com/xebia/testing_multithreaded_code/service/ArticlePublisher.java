@@ -1,4 +1,4 @@
-package com.xebia.testing_multithreaded_code;
+package com.xebia.testing_multithreaded_code.service;
 
 import com.xebia.testing_multithreaded_code.model.Article;
 import com.xebia.testing_multithreaded_code.model.ArticleStatus;
