@@ -1,4 +1,4 @@
-package com.xebia.testing_multithreaded_code;
+package com.xebia.testing_multithreaded_code.model;
 
 public class Article {
 
@@ -8,7 +8,7 @@ public class Article {
 
     private String body;
 
-    private concurrency_multithreading.async.model.ArticleStatus status = concurrency_multithreading.async.model.ArticleStatus.DRAFT;
+    private ArticleStatus status = ArticleStatus.DRAFT;
 
     private Article(Builder builder) {
         id = builder.id;
@@ -21,8 +21,8 @@ public class Article {
     }
 
     public void publish() {
-        if (this.status != concurrency_multithreading.async.model.ArticleStatus.PUBLISH) {
-            this.status = concurrency_multithreading.async.model.ArticleStatus.PUBLISH;
+        if (this.status != ArticleStatus.PUBLISH) {
+            this.status = ArticleStatus.PUBLISH;
         }
     }
 
@@ -49,8 +49,8 @@ public class Article {
             return this;
         }
 
-        public concurrency_multithreading.async.model.Article build() {
-            return new concurrency_multithreading.async.model.Article(this);
+        public Article build() {
+            return new Article(this);
         }
     }
 
@@ -66,7 +66,7 @@ public class Article {
         return body;
     }
 
-    public concurrency_multithreading.async.model.ArticleStatus getStatus() {
+    public ArticleStatus getStatus() {
         return status;
     }
 }

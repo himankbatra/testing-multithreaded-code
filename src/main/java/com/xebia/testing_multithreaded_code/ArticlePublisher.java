@@ -1,9 +1,10 @@
-package concurrency_multithreading.async;
+package com.xebia.testing_multithreaded_code;
 
-import concurrency_multithreading.async.model.Article;
-import concurrency_multithreading.async.model.ArticleStatus;
+import com.xebia.testing_multithreaded_code.model.Article;
+import com.xebia.testing_multithreaded_code.model.ArticleStatus;
+import com.xebia.testing_multithreaded_code.repository.ArticleRepository;
+import com.xebia.testing_multithreaded_code.service.EmailSender;
 
-import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 import java.util.concurrent.CompletableFuture;
@@ -57,28 +58,3 @@ public class ArticlePublisher {
 }
 
 
-class ArticleRepository {
-
-    public List<Article> inventory;
-
-    public ArticleRepository(List<Article> inventory) {
-        this.inventory = inventory;
-    }
-
-    public Article findById(int articleId) {
-        return inventory.stream().filter(article -> article.getId() == articleId)
-                .findFirst().orElseThrow(RuntimeException::new);
-    }
-
-
-}
-
-
-class EmailSender {
-
-    public void sendEmail(
-            String subject, String body) {
-        System.out.println("Successfully Sent mail !! with " + subject + " and body " + body);
-    }
-
-}
